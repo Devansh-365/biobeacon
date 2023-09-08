@@ -55,9 +55,67 @@ BioBeacon comes up with a whole bunch of amazing features to provide you the bes
 - **Database using Neon**
 - **Authentication with Next-Auth**
 
+## 🛠️ Installation Steps
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/saviomartin/slickr.git
+```
+
+2. Change the working directory
+
+```bash
+cd slickr
+```
+
+3. Install dependencies
+
+```bash
+npm install
+```
+
+4. Copy .env.example to .env.local and update the variables.
+
+```bash
+cp .env.example .env.local
+```
+
+5. Run the app
+
+```bash
+npm run dev
+```
+
+You are all set! Open [localhost:3000](http://localhost:3000/) to see the app.
+
+## 💻 Built with
+
+- [Next JS](https://nextjs.org/)
+- [Typescript](https://www.typescriptlang.org/): for authentication
+- [NextAuth.js](https://next-auth.js.org/): for authentication
+- [Tailwind](https://tailwindcss.com/): for styling
+- [lucide-react](https://lucide.dev/icons/): for icons
+- [orisma](https://www.prisma.io/): for orm
+- [react-hot-toast](https://react-hot-toast.com/): for toasts
+- [Shadcn UI](https://ui.shadcn.com/): for components
+- [Vercel](http://vercel.com/): for hosting
+
 ## 🛡️ License
 
 This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) file for details.
+
+## 🍰 Contributing
+
+- BioBeacon is an open-source project and we welcome contributions from the community.
+
+- If you'd like to contribute, please fork the repository and make changes as you'd like. Pull requests are warmly welcome.
+
+### Our Contributors ✨
+
+<a href="https://github.com/Devansh-365/biobeacon/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Devansh-365/biobeacon" />
+</a>
 
 ---
 
