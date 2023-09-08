@@ -1,6 +1,7 @@
 import DashboardNav from "@/components/dashboard-nav";
 import { UserAccountNav } from "@/components/user-account-nav";
 import { authOptions } from "@/lib/auth";
+import db from "@/lib/db";
 import { getCurrentUser } from "@/lib/session";
 import { redirect } from "next/navigation";
 
@@ -17,17 +18,29 @@ export default async function ProjectLayout({
     redirect(authOptions?.pages?.signIn || "/auth/login");
   }
 
+  const project = await db.project.findFirst({
+    where: {
+      id: params.projectId,
+      userId: user.id,
+    },
+  });
+
+  if (!project) {
+    redirect("/");
+  }
+
+
   const navItems = [
     {
-      path: `/${params.projectId}`,
+      path: `/dashboard/${params.projectId}`,
       name: "Links",
     },
     {
-      path: `/${params.projectId}/customize`,
+      path: `/dashboard/${params.projectId}/customize`,
       name: "Customize",
     },
     {
-      path: `/${params.projectId}/settings`,
+      path: `/dashboard/${params.projectId}/settings`,
       name: "Settings",
     },
   ];
