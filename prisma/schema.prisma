@@ -9,3 +9,35 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  id             String    @id @default(uuid())
+  name           String?
+  email          String   @unique
+  emailVerified  DateTime?
+  image          String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Project {
+  id              String    @id @default(uuid())
+  name            String
+  userId          String
+  links           Link[]     @relation("ProjectToLink")
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+}
+
+model Link {
+  id              String     @id @default(uuid())
+  name            String
+  bio             String?
+  image           String?
+  projectId       String
+  project         Project    @relation("ProjectToLink", fields: [projectId], references: [id])
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+
+  @@index([projectId])
+}
