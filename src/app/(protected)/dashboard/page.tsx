@@ -1,14 +1,9 @@
-import { Icons } from "@/components/icons";
-import ProjectCards from "@/components/project-cards";
-import { Button } from "@/components/ui/button";
 import CreateProjectButton from "@/components/ui/create-project-button";
 import db from "@/lib/db";
 import Link from "next/link";
 
 export default async function DashboardPage() {
   const projects = await db.project.findMany();
-  console.log("PROJECTS: ", projects);
-
   return (
     <>
       <section className="flex h-36 items-center border-b border-gray-200 bg-white">
