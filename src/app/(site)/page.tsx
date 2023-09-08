@@ -15,7 +15,8 @@ export default function Home() {
             className:
               "border-black border-solid border translate-y-[-1rem] animate-fade-in opacity-0 rounded-full",
           })}
-          href="https://github.com/Devansh-365"
+          href="https://github.com/Devansh-365/biobeacon"
+          target="_blank"
         >
           <Icons.star />
           <span className="ml-2">Star us on Github</span>
