@@ -33,13 +33,13 @@ export default function DashboardNav({
     <header className="sticky left-0 right-0 top-0 z-20 border-b bg-white border-gray-200 ">
       <div className="mx-auto w-full max-w-screen-xl px-2.5 lg:px-20">
         <div className="flex h-16 items-center justify-between">
-          <div className="flex space-x-4">
+          <div className="flex space-x-2 lg:space-x-4">
             <Link href="/">
               <Icons.logo className="w-8 h-8" />
             </Link>
             <ProjectSwitcher />
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 lg:space-x-4">
             {showShare && <Button size="sm">Share your Link ✨</Button>}
             {children}
           </div>

@@ -20,7 +20,7 @@ export default async function Navbar() {
               <Link
                 className={buttonVariants({
                   size: "sm",
-                  className: "rounded-full mr-4",
+                  className: "rounded-full mr-2 lg:mr-4",
                   variant: "ghost",
                 })}
                 href="/login"
