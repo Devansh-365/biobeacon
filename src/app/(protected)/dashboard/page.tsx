@@ -24,7 +24,12 @@ export default async function DashboardPage() {
     redirect("/login");
   }
 
-  const projects = await db.project.findMany();
+  const projects = await db.project.findMany({
+    where: {
+      userId: user.id,
+    },
+  });
+
   return (
     <>
       <DashboardNav navItems={navItems}>
