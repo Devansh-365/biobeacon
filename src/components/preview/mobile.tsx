@@ -1,6 +1,7 @@
 import db from "@/lib/db";
 import { getCurrentUser } from "@/lib/session";
 import { useSession } from "next-auth/react";
+import DisplayData from "./display-data";
 
 export default async function Mobile({ projectId }: { projectId: string }) {
   const project = await db.project.findFirst({
@@ -16,18 +17,21 @@ export default async function Mobile({ projectId }: { projectId: string }) {
 
   return (
     <>
-      <div className="relative border-[4px] lg:border-[8px] border-black rounded-[2.5rem] w-60 lg:w-60 xl:w-64 aspect-[9/19] overflow-hidden max-w-sm mx-auto z-0">
-        <div className="absolute inset-0 z-10 ">
-          {true && (
-            <iframe
-              seamless
-              loading="lazy"
-              title="preview"
-              id="preview"
-              className="h-full w-full"
-              src={url}
-            ></iframe>
-          )}
+      <div className="relative mx-auto border-primary bg-primary border-[14px] rounded-[2.5rem] min-w-[350px] h-[700px] w-[350px] shadow-xl">
+        <div className="w-[148px] h-[18px] bg-primary top-0 rounded-b-[1rem] left-1/2 -translate-x-1/2 absolute"></div>
+        <div className="h-[46px] w-[4px] bg-primary absolute -left-[17px] top-[124px] rounded-l-lg"></div>
+        <div className="h-[46px] w-[4px] bg-primary absolute -left-[17px] top-[178px] rounded-l-lg"></div>
+        <div className="h-[64px] w-[4px] bg-primary absolute -right-[17px] top-[142px] rounded-r-lg"></div>
+        <div className="rounded-[2rem] overflow-hidden w-full h-full break-words">
+          <div className="bg-white h-full overflow-y-scroll hide_scrollbar pt-10 px-2">
+            {true ? (
+              <div className="w-full text-sm text-muted-foreground h-[90%] flex justify-center items-center">
+                Nothing to show...
+              </div>
+            ) : (
+              <DisplayData />
+            )}
+          </div>
         </div>
       </div>
     </>
