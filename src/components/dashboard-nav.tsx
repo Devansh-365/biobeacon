@@ -6,10 +6,6 @@ import Link from "next/link";
 import ProjectSwitcher from "./project-switcher";
 import { redirect, usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { UserAccountNav } from "./user-account-nav";
-import { getCurrentUser } from "@/lib/session";
-import { getServerSession } from "next-auth";
-import { useSession } from "next-auth/react";
 
 const navItems = [
   {

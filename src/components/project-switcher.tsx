@@ -26,6 +26,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { useParams, useRouter } from "next/navigation";
+import { useModal } from "@/hooks/use-modal";
 
 type PopoverTriggerProps = React.ComponentPropsWithoutRef<
   typeof PopoverTrigger
@@ -50,6 +51,7 @@ export default function ProjectSwitcher() {
   //   );
 
   const [open, setOpen] = React.useState(false);
+  const { onOpen } = useModal();
 
   //   const onStoreSelect = (store: { value: string; label: string }) => {
   //     setOpen(false);
@@ -103,6 +105,7 @@ export default function ProjectSwitcher() {
             <CommandGroup>
               <CommandItem
                 onSelect={() => {
+                  onOpen("createProject");
                   setOpen(false);
                 }}
               >
