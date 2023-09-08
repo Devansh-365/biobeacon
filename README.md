@@ -1,34 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <a href="https://biobeacon.vercel.app/">
+    <img alt="baatcheet" src="public/vercel.svg" width="125" />
+  </a>
+</p>
+<h1 align="center">BioBeacon✨️</h1>
 
-## Getting Started
+<p align="center">
+<a href="https://github.com/Devansh-365/biobeacon/blob/master/LICENSE" target="blank">
+<img src="https://img.shields.io/github/license/Devansh-365/biobeacon?style=flat-square" alt="BioBeacon licence" />
+</a>
+<a href="https://github.com/Devansh-365/biobeacon/fork" target="blank">
+<img src="https://img.shields.io/github/forks/Devansh-365/biobeacon?style=flat-square" alt="BioBeacon forks"/>
+</a>
+<a href="https://github.com/Devansh-365/biobeacon/stargazers" target="blank">
+<img src="https://img.shields.io/github/stars/Devansh-365/biobeacon?style=flat-square" alt="BioBeacon stars"/>
+</a>
+<a href="https://github.com/Devansh-365/biobeacon/issues" target="blank">
+<img src="https://img.shields.io/github/issues/Devansh-365/biobeacon?style=flat-square" alt="BioBeacon issues"/>
+</a>
+<a href="https://github.com/Devansh-365/biobeacon/pulls" target="blank">
+<img src="https://img.shields.io/github/issues-pr/Devansh-365/biobeacon?style=flat-square" alt="BioBeacon pull-requests"/>
+</a>
+</p>
 
-First, run the development server:
+<!-- <p align="center"><img src="public/sc.png" alt="BioBeacon sc" width="550" /></p> -->
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+<p align="center">
+    <a href="https://biobeacon.vercel.app/" target="blank">View Demo</a>
+    ·
+    <a href="https://github.com/Devansh-365/biobeacon/issues/new/choose">Report Bug</a>
+    ·
+    <a href="https://github.com/Devansh-365/biobeacon/issues/new/choose">Request Feature</a>
+</p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Introducing BioBeacon ✌️
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+An Open-Source Solution for Streamlining Your Social Media Links. Inspired by Linktree.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🚀 Demo
 
-## Learn More
+<a href="https://biobeacon.vercel.app/" target="blank">
+<!-- <img src="public/sc.png" /> -->
+</a>
 
-To learn more about Next.js, take a look at the following resources:
+Try the App: [BioBeacon](https://biobeacon.vercel.app/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🧐 Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+BioBeacon comes up with a whole bunch of amazing features to provide you the best experience, Here're some of our best features.
 
-## Deploy on Vercel
+- **Beautiful UI using TailwindCSS and ShadcnUI**
+- **Full responsivity and mobile UI**
+- **ORM using Prisma**
+- **Database using Neon**
+- **Authentication with Next-Auth**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛡️ License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) file for details.
+
+---
+
+<h3 align="center">
+BioBeacon needs a ⭐️ from you
+</h3>
