@@ -60,13 +60,13 @@ BioBeacon comes up with a whole bunch of amazing features to provide you the bes
 1. Clone the repository
 
 ```bash
-git clone https://github.com/saviomartin/slickr.git
+git clone https://github.com/Devansh-365/biobeacon.git
 ```
 
 2. Change the working directory
 
 ```bash
-cd slickr
+cd biobeacon
 ```
 
 3. Install dependencies
