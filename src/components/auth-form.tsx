@@ -20,9 +20,9 @@ const AuthForm = ({ className, ...props }: AuthFormProps) => {
     try {
       await signIn("google", {
         redirect: false,
-        callbackUrl: searchParams?.get("from") || "/",
+        callbackUrl: searchParams?.get("from") || "/dashboard",
       });
-      router.push(`/`);
+      router.push(`/dashboard`);
     } catch (error) {
       console.log("GOOGLE AUTH ERROR: ", error);
     } finally {
