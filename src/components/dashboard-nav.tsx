@@ -6,19 +6,22 @@ import Link from "next/link";
 import ProjectSwitcher from "./project-switcher";
 import { redirect, usePathname } from "next/navigation";
 import { motion } from "framer-motion";
+import { Button } from "./ui/button";
 
-const navItems = [
-  {
-    path: "/dashboard",
-    name: "Projects",
-  },
-  {
-    path: "/settings",
-    name: "Settings",
-  },
-];
+interface NavItemProps {
+  name: String;
+  path: any;
+}
 
-export default function DashboardNav({ children }: { children: React.ReactNode }) {
+export default function DashboardNav({
+  children,
+  navItems,
+  showShare = false,
+}: {
+  children: React.ReactNode;
+  navItems: NavItemProps[];
+  showShare?: Boolean;
+}) {
   let pathname = usePathname() || "/";
   if (pathname.includes("/writing/")) {
     pathname = "/writing";
@@ -36,7 +39,10 @@ export default function DashboardNav({ children }: { children: React.ReactNode }
             </Link>
             <ProjectSwitcher />
           </div>
-          {children}
+          <div className="flex items-center space-x-4">
+            {showShare && <Button size="sm">Share your Link ✨</Button>}
+            {children}
+          </div>
         </div>
         <nav className="-mb-0.5 flex h-12 items-center justify-start space-x-2 overflow-x-auto scrollbar-hide">
           {navItems.map((item, index) => {

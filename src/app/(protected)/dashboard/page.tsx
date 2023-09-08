@@ -19,7 +19,7 @@ export default async function DashboardPage() {
           {projects.map((project, i) => (
             <Link
               key={i}
-              href="#"
+              href={`/${project.id}`}
               className="flex flex-col space-y-10 rounded-lg border border-gray-100 bg-white p-6 shadow transition-all hover:shadow-lg"
             >
               {project?.name}

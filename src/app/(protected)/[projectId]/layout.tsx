@@ -1,23 +1,10 @@
 import DashboardNav from "@/components/dashboard-nav";
-import Navbar from "@/components/navbar";
 import { UserAccountNav } from "@/components/user-account-nav";
 import { authOptions } from "@/lib/auth";
-import db from "@/lib/db";
 import { getCurrentUser } from "@/lib/session";
-import { redirect, usePathname } from "next/navigation";
+import { redirect } from "next/navigation";
 
-const navItems = [
-  {
-    path: "/dashboard",
-    name: "Projects",
-  },
-  {
-    path: "/settings",
-    name: "Settings",
-  },
-];
-
-export default async function DashboardLayout({
+export default async function ProjectLayout({
   children,
   params,
 }: {
@@ -27,12 +14,27 @@ export default async function DashboardLayout({
   const user = await getCurrentUser();
 
   if (!user) {
-    redirect(authOptions?.pages?.signIn || "/login");
+    redirect(authOptions?.pages?.signIn || "/auth/login");
   }
+
+  const navItems = [
+    {
+      path: `/${params.projectId}`,
+      name: "Links",
+    },
+    {
+      path: `/${params.projectId}/customize`,
+      name: "Customize",
+    },
+    {
+      path: `/${params.projectId}/settings`,
+      name: "Settings",
+    },
+  ];
 
   return (
     <div className="w-full min-h-screen">
-      <DashboardNav navItems={navItems}>
+      <DashboardNav navItems={navItems} showShare>
         <UserAccountNav
           user={{
             name: user?.name,
