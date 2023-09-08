@@ -4,8 +4,12 @@ import React, { useState } from "react";
 import { Icons } from "./icons";
 import Link from "next/link";
 import ProjectSwitcher from "./project-switcher";
-import { usePathname } from "next/navigation";
+import { redirect, usePathname } from "next/navigation";
 import { motion } from "framer-motion";
+import { UserAccountNav } from "./user-account-nav";
+import { getCurrentUser } from "@/lib/session";
+import { getServerSession } from "next-auth";
+import { useSession } from "next-auth/react";
 
 const navItems = [
   {
@@ -18,9 +22,8 @@ const navItems = [
   },
 ];
 
-export default function DashboardNav() {
+export default function DashboardNav({ children }: { children: React.ReactNode }) {
   let pathname = usePathname() || "/";
-
   if (pathname.includes("/writing/")) {
     pathname = "/writing";
   }
@@ -37,6 +40,7 @@ export default function DashboardNav() {
             </Link>
             <ProjectSwitcher />
           </div>
+          {children}
         </div>
         <nav className="-mb-0.5 flex h-12 items-center justify-start space-x-2 overflow-x-auto scrollbar-hide">
           {navItems.map((item, index) => {
