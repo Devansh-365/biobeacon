@@ -3,6 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import db from "@/lib/db";
 import { Icons } from "../icons";
 import ExtraLink from "./extra-link";
+import SocialLink from "./social-link";
 
 export default async function DisplayData({
   projectId,
@@ -51,61 +52,18 @@ export default async function DisplayData({
           <p className="text-sm mt-2 text-slate-600">{project.bio}</p>
         )}
       </div>
-      {/* {!allSocialLinksAreEmpty && (
-        <div className="flex items-center justify-center flex-wrap">
-          {Object.entries(acc).map(([key, value]) => {
-            const excludedKeys = ["i", "n", "d"];
-
-            if (key !== "ls" && value && !excludedKeys.includes(key)) {
-              const propIcon = iconMap[key as keyof typeof iconMap];
-              if (key === "e") {
-                // Handle email link generation
-                return (
-                  <span className="p-1" key={key}>
-                    <a href={`mailto:${value}`}>
-                      <Icon icon={propIcon} className="h-6 w-6" />
-                    </a>
-                  </span>
-                );
-              } else if (key === "w") {
-                // Handle WhatsApp link generation
-                const whatsappValue = value.startsWith("https://wa.me/")
-                  ? value // If it already starts with the correct prefix
-                  : `https://wa.me/${value}`;
-
-                return (
-                  <span className="p-1" key={key}>
-                    <a
-                      href={whatsappValue}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Icon icon={propIcon} className="h-6 w-6" />
-                    </a>
-                  </span>
-                );
-              } else {
-                return (
-                  <span className="p-1" key={key}>
-                    <a href={value} target="_blank" rel="noopener noreferrer">
-                      <Icon icon={propIcon} className="h-6 w-6" />
-                    </a>
-                  </span>
-                );
-              }
-            }
-            return null;
+      <div className="flex items-center justify-center flex-wrap">
+        {project &&
+          project.links.map((link, id) => {
+            return link.isSocial ? (
+              <SocialLink url={link.url} key={id} />
+            ) : null;
           })}
-        </div>
-      )} */}
+      </div>
       <ul className="space-y-2">
         {project &&
           project.links.map((link, id) => (
-            <ExtraLink
-              label={link.name}
-              url={link.url}
-              key={id}
-            />
+            <ExtraLink label={link.name} url={link.url} key={id} />
           ))}
       </ul>
     </main>
