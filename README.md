@@ -50,6 +50,14 @@ Try the App: [BioBeacon](https://biobeacon.vercel.app/)
 BioBeacon comes up with a whole bunch of amazing features to provide you the best experience, Here're some of our best features.
 
 - **Beautiful UI using TailwindCSS and ShadcnUI**
+- **User-Friendly Dashboard: An intuitive and user-friendly dashboard for easy navigation**
+- **Multiple Projects: Ability to create and manage multiple projects or profiles**
+- **Customizable Links: Create and customize links for each project profile**
+- **Unique Project URLs: Each project gets a unique URL for sharing**
+- **Unique Project URLs: Each project gets a unique URL for sharing**
+- **Rich Media Support: Add links to websites, social profiles, articles, and more**
+- **Shareable Links: Share project URLs on social media, websites, or anywhere else**
+- **Feedback and Support: Easy access to user support and feedback**
 - **Full responsivity and mobile UI**
 - **ORM using Prisma**
 - **Database using Neon**
