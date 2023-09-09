@@ -45,7 +45,7 @@ export default async function Navbar() {
               })}
               href="/dashboard"
             >
-              Dashboard
+              Go to Dashboard
             </Link>
           )}
         </div>
