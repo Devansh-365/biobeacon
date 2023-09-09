@@ -12,7 +12,7 @@ const navItems = [
     name: "Projects",
   },
   {
-    path: "/settings",
+    path: "/dashboard/settings",
     name: "Settings",
   },
 ];
