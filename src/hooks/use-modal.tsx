@@ -6,7 +6,8 @@ export type ModalType =
   | "deleteProject"
   | "createLink"
   | "deleteLink"
-  | "updateLink";
+  | "updateLink"
+  | "shareLink";
 
 interface ModalData {
   project?: Project;

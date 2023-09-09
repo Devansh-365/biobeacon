@@ -5,6 +5,7 @@ import { CreateProjectModal } from "../modals/create-project-modal";
 import { CreateLinkModal } from "../modals/create-link-modal";
 import { UpdateLinkModal } from "../modals/update-link-modal";
 import { DeleteLinkModal } from "../modals/delete-link-modal";
+import ShareLinkModal from "../modals/share-link-modal";
 
 export const ModalProvider = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -23,6 +24,7 @@ export const ModalProvider = () => {
       <CreateLinkModal />
       <UpdateLinkModal />
       <DeleteLinkModal />
+      <ShareLinkModal />
     </>
   );
 };

@@ -1,4 +1,5 @@
 import DashboardNav from "@/components/dashboard-nav";
+import ShareLinkButton from "@/components/ui/share-link-button";
 import { UserAccountNav } from "@/components/user-account-nav";
 import { authOptions } from "@/lib/auth";
 import db from "@/lib/db";
@@ -48,6 +49,7 @@ export default async function ProjectLayout({
   return (
     <div className="w-full min-h-screen">
       <DashboardNav navItems={navItems} showShare>
+        <ShareLinkButton project={project} />
         <UserAccountNav
           user={{
             name: user?.name,

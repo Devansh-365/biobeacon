@@ -12,5 +12,11 @@ export default function SetingsPage({
       name: "General",
     },
   ];
-  return <SettingsLayout tabs={navItems}>SetingsPage</SettingsLayout>;
+  return (
+    <SettingsLayout tabs={navItems}>
+      <div className="grid gap-5 md:col-span-4">
+        
+      </div>
+    </SettingsLayout>
+  );
 }

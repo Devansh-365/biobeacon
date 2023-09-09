@@ -7,6 +7,7 @@ import ProjectSwitcher from "./project-switcher";
 import { redirect, usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
+import { useModal } from "@/hooks/use-modal";
 
 interface NavItemProps {
   name: String;
@@ -22,6 +23,8 @@ export default function DashboardNav({
   navItems: NavItemProps[];
   showShare?: Boolean;
 }) {
+  const { onOpen } = useModal();
+
   let pathname = usePathname() || "/";
   if (pathname.includes("/writing/")) {
     pathname = "/writing";
@@ -40,7 +43,6 @@ export default function DashboardNav({
             <ProjectSwitcher />
           </div>
           <div className="flex items-center space-x-2 lg:space-x-4">
-            {showShare && <Button size="sm">Share your Link ✨</Button>}
             {children}
           </div>
         </div>
