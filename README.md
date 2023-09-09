@@ -97,6 +97,7 @@ You are all set! Open [localhost:3000](http://localhost:3000/) to see the app.
 - [Tailwind](https://tailwindcss.com/): for styling
 - [lucide-react](https://lucide.dev/icons/): for icons
 - [Prisma](https://www.prisma.io/): for orm
+- [UploadThing](https://uploadthing.com/): for image upload
 - [react-hot-toast](https://react-hot-toast.com/): for toasts
 - [Shadcn UI](https://ui.shadcn.com/): for components
 - [Vercel](http://vercel.com/): for hosting
