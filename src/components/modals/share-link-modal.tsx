@@ -66,7 +66,7 @@ const ShareLinkModal = () => {
         <Tabs defaultValue="url" className="pb-8 mx-auto">
           <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="url">URL</TabsTrigger>
-            <TabsTrigger value="password">Password</TabsTrigger>
+            <TabsTrigger value="qr-code">QR Code</TabsTrigger>
           </TabsList>
           <TabsContent value="url">
             <Card>
@@ -93,10 +93,10 @@ const ShareLinkModal = () => {
               </CardContent>
             </Card>
           </TabsContent>
-          <TabsContent value="password">
+          <TabsContent value="qr-code">
             <Card>
               <CardHeader>
-                <CardTitle>QR code</CardTitle>
+                <CardTitle>QR Code</CardTitle>
                 <CardDescription className="max-w-[374px]">
                   Share this QR code with your audience to provide access to
                   your profile.
