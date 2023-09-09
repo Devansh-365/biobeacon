@@ -2,6 +2,7 @@ import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import db from "@/lib/db";
 import { Icons } from "../icons";
+import ExtraLink from "./extra-link";
 
 export default async function DisplayData({
   projectId,
@@ -97,17 +98,16 @@ export default async function DisplayData({
           })}
         </div>
       )} */}
-      {/* <ul className="space-y-2">
-        {acc.ls &&
-          acc.ls.map((link, id) => (
-            <AdditionalLinkCard
-              label={link.l}
-              icon={link.i}
-              url={link.u}
+      <ul className="space-y-2">
+        {project &&
+          project.links.map((link, id) => (
+            <ExtraLink
+              label={link.name}
+              url={link.url}
               key={id}
             />
           ))}
-      </ul> */}
+      </ul>
     </main>
   );
 }

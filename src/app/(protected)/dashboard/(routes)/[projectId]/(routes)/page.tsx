@@ -17,7 +17,7 @@ export default function ProjectIdPage({
         <Mobile projectId={params?.projectId} />
       </div>
       <div className="lg:hidden">
-        <PreviewButton />
+        <PreviewButton projectId={params?.projectId} />
       </div>
     </section>
   );
