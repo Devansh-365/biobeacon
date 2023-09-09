@@ -2,6 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { CreateProjectModal } from "../modals/create-project-modal";
+import { CreateLinkModal } from "../modals/create-link-modal";
+import { UpdateLinkModal } from "../modals/update-link-modal";
+import { DeleteLinkModal } from "../modals/delete-link-modal";
 
 export const ModalProvider = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -17,6 +20,9 @@ export const ModalProvider = () => {
   return (
     <>
       <CreateProjectModal />
+      <CreateLinkModal />
+      <UpdateLinkModal />
+      <DeleteLinkModal />
     </>
   );
 };

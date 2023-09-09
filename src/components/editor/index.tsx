@@ -11,8 +11,6 @@ export default async function Editor({ projectId }: { projectId: string }) {
     },
   });
 
-  console.log("LINKS: ", links);
-
   return (
     <div className="max-w-[640px] flex-1 mx-auto my-10">
       <AddProjectLink />
@@ -24,8 +22,8 @@ export default async function Editor({ projectId }: { projectId: string }) {
                 key={i}
                 className="flex justify-between bg-white items-center p-2 rounded-lg drop-shadow-md my-5 w-full"
               >
-                <p></p>
-                <ActionButton text="dsds" />
+                <p>{link.name}</p>
+                <ActionButton text="dsds" link={link} />
               </div>
             </React.Fragment>
           ))}

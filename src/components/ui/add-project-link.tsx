@@ -9,7 +9,7 @@ export default function AddProjectLink() {
   const { onOpen } = useModal();
 
   return (
-    <Button className="w-full" onClick={() => onOpen("createProject")}>
+    <Button className="w-full" onClick={() => onOpen("createLink")}>
       Add Link <Icons.add className="w-4 h-4 ml-2" />
     </Button>
   );

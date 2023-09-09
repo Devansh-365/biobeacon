@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
   DropdownMenu,
@@ -8,11 +10,18 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "../ui/button";
 import { Copy, Edit, MoreHorizontal, Trash } from "lucide-react";
-import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
+import { useModal } from "@/hooks/use-modal";
 
-export default function ActionButton({text}: {text: string}) {
-  const router = useRouter();
+export default function ActionButton({
+  text,
+  link,
+}: {
+  text: string;
+  link: any;
+}) {
+  const { onOpen } = useModal();
+  console.log("ACTION", link)
 
   const onCopy = (id: string) => {
     navigator.clipboard.writeText(id);
@@ -33,10 +42,10 @@ export default function ActionButton({text}: {text: string}) {
           <DropdownMenuItem onClick={() => onCopy(text)}>
             <Copy className="mr-2 h-4 w-4" /> Copy Name
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => {}}>
+          <DropdownMenuItem onClick={() => onOpen("updateLink", { link })}>
             <Edit className="mr-2 h-4 w-4" /> Update
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => {}}>
+          <DropdownMenuItem onClick={() => onOpen("deleteLink", { link })}>
             <Trash className="mr-2 h-4 w-4" /> Delete
           </DropdownMenuItem>
         </DropdownMenuContent>
