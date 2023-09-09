@@ -36,10 +36,10 @@ export default async function ProjectLayout({
       path: `/dashboard/${params.projectId}`,
       name: "Links",
     },
-    {
-      path: `/dashboard/${params.projectId}/customize`,
-      name: "Customize",
-    },
+    // {
+    //   path: `/dashboard/${params.projectId}/customize`,
+    //   name: "Customize",
+    // },
     {
       path: `/dashboard/${params.projectId}/settings`,
       name: "Settings",
