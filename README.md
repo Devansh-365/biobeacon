@@ -91,12 +91,12 @@ You are all set! Open [localhost:3000](http://localhost:3000/) to see the app.
 
 ## 💻 Built with
 
-- [Next JS](https://nextjs.org/)
-- [Typescript](https://www.typescriptlang.org/): for authentication
+- [Next JS](https://nextjs.org/): framework
+- [Typescript](https://www.typescriptlang.org/): language
 - [NextAuth.js](https://next-auth.js.org/): for authentication
 - [Tailwind](https://tailwindcss.com/): for styling
 - [lucide-react](https://lucide.dev/icons/): for icons
-- [orisma](https://www.prisma.io/): for orm
+- [Prisma](https://www.prisma.io/): for orm
 - [react-hot-toast](https://react-hot-toast.com/): for toasts
 - [Shadcn UI](https://ui.shadcn.com/): for components
 - [Vercel](http://vercel.com/): for hosting
