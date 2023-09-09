@@ -53,6 +53,7 @@ model Project {
   id              String    @id @default(uuid())
   name            String
   bio             String?
+  image           String?
   userId          String
   links           Link[]     @relation("ProjectToLink")
   createdAt       DateTime   @default(now())
