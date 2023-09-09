@@ -31,11 +31,11 @@ export default async function DisplayData({
       <div className="text-center">
         {user ? (
           <Avatar className="h-20 w-20 rounded-full overflow-hidden ring ring-slate-200 mx-auto">
-            {user.image ? (
-              <AvatarImage alt="Picture" src={user.image} />
+            {project?.image ? (
+              <AvatarImage alt="Picture" src={project.image} />
             ) : (
               <AvatarFallback>
-                <span className="sr-only">{user.name}</span>
+                <span className="sr-only">{project?.name}</span>
                 <Icons.user className="h-4 w-4" />
               </AvatarFallback>
             )}

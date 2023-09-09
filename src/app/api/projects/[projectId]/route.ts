@@ -17,7 +17,7 @@ export async function PATCH(
     const { user } = await session;
     const body = await req.json();
 
-    const { name, bio } = body;
+    const { name, bio, image } = body;
 
     if (!name) {
       return new NextResponse("Name is required", { status: 400 });
@@ -33,8 +33,9 @@ export async function PATCH(
         userId: user.id,
       },
       data: {
-        name,
-        bio: bio ? bio : "",
+        ...(name && { name }),
+        ...(bio && { bio }),
+        ...(image && { image }),
       },
     });
 

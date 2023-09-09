@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
 import { useParams } from "next/navigation";
+import { ImageUpload } from "@/components/image-upload";
 
 const formSchema = z.object({
   name: z.string().min(1, {
@@ -27,17 +28,23 @@ const formSchema = z.object({
   bio: z.string().min(1, {
     message: "Url is required.",
   }),
+  image: z.string().min(1, {
+    message: "Image is required.",
+  }),
 });
 
 export const SettingsClient = ({ project }: { project: any }) => {
   const router = useRouter();
   const params = useParams();
 
+  console.log("PROJECT", project)
+
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
       bio: "",
+      image: project.image,
     },
   });
 
@@ -45,6 +52,7 @@ export const SettingsClient = ({ project }: { project: any }) => {
     if (project) {
       form.setValue("name", project.name);
       form.setValue("bio", project.bio);
+      form.setValue("image", project.image);
     }
   }, [form, project]);
 
@@ -71,6 +79,23 @@ export const SettingsClient = ({ project }: { project: any }) => {
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <div className="space-y-6 px-6">
+            <div className="flex items-center justify-start text-center">
+              <FormField
+                control={form.control}
+                name="image"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <ImageUpload
+                        endpoint="projectImage"
+                        value={field.value}
+                        onChange={field.onChange}
+                      />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+            </div>
             <FormField
               control={form.control}
               name="name"
