@@ -1,52 +1,56 @@
 import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { ImageIcon } from "lucide-react";
+import db from "@/lib/db";
+import { Icons } from "../icons";
 
-const DisplayData: React.FC = ({ acc }: {acc?: any}) => {
-  const allSocialLinksAreEmpty =
-    !acc.f &&
-    !acc.t &&
-    !acc.ig &&
-    !acc.tg &&
-    !acc.w &&
-    !acc.y &&
-    !acc.e &&
-    !acc.gh &&
-    !acc.l;
-
-  const iconMap: Record<string, string> = {
-    f: "ph:facebook-logo-duotone",
-    t: "ph:twitter-logo-duotone",
-    ig: "ph:instagram-logo-duotone",
-    tg: "ph:telegram-logo-duotone",
-    w: "ph:whatsapp-logo-duotone",
-    y: "ph:youtube-logo-duotone",
-    e: "ph:envelope-duotone",
-    gh: "ph:github-logo-duotone",
-    l: "ph:linkedin-logo-duotone",
-  };
+export default async function DisplayData({
+  projectId,
+}: {
+  projectId: string;
+}) {
+  const project = await db.project.findFirst({
+    where: {
+      name: projectId,
+    },
+    include: {
+      links: true,
+    },
+  });
+  const user = await db.user.findFirst({
+    where: {
+      id: project?.userId,
+    },
+  });
+  console.log("PROJEECT: ", project);
+  console.log("USER ID: ", user);
 
   return (
     <main className="p-2 h-full w-full space-y-8  max-w-lg mx-auto overflow-y-scroll hide_scrollbar">
-      {/* <div className="text-center">
-        {acc.i && (
+      <div className="text-center">
+        {user ? (
           <Avatar className="h-20 w-20 rounded-full overflow-hidden ring ring-slate-200 mx-auto">
-            <AvatarImage
-              src={acc.i}
-              alt={`${acc.n}'s profile picture`}
-              className="h-full w-full object-cover"
-            />
-            <AvatarFallback>
-              <ImageIcon className="h-8 w-8 text-gray-300" />
-            </AvatarFallback>
+            {user.image ? (
+              <AvatarImage alt="Picture" src={user.image} />
+            ) : (
+              <AvatarFallback>
+                <span className="sr-only">{user.name}</span>
+                <Icons.user className="h-4 w-4" />
+              </AvatarFallback>
+            )}
           </Avatar>
+        ) : (
+          <></>
         )}
-        {acc.n && (
-          <h1 className="text-2xl font-bold mt-4 text-slate-800">{acc.n}</h1>
+        {project && (
+          <h1 className="text-2xl font-bold mt-4 text-slate-800">
+            {project.name}
+          </h1>
         )}
-        {acc.d && <p className="text-sm mt-2 text-slate-600">{acc.d}</p>}
+        {project?.bio && (
+          <p className="text-sm mt-2 text-slate-600">{project.bio}</p>
+        )}
       </div>
-      {!allSocialLinksAreEmpty && (
+      {/* {!allSocialLinksAreEmpty && (
         <div className="flex items-center justify-center flex-wrap">
           {Object.entries(acc).map(([key, value]) => {
             const excludedKeys = ["i", "n", "d"];
@@ -106,6 +110,4 @@ const DisplayData: React.FC = ({ acc }: {acc?: any}) => {
       </ul> */}
     </main>
   );
-};
-
-export default DisplayData;
+}

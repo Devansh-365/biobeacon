@@ -8,6 +8,9 @@ export default async function Mobile({ projectId }: { projectId: string }) {
     where: {
       id: projectId,
     },
+    include: {
+      links: true,
+    },
   });
   console.log("PROJEECT: ", project);
   const url =
