@@ -5,6 +5,7 @@ import db from "@/lib/db";
 import { getCurrentUser } from "@/lib/session";
 import { redirect } from "next/navigation";
 import React from "react";
+import { SettingsClient } from "./components/settings-client";
 
 const navItems = [
   {
@@ -47,7 +48,10 @@ export default async function SetingsPage() {
           }}
         />
       </DashboardNav>
-      <SettingsLayout tabs={navItems2}>SetingsPage</SettingsLayout>;
+      <SettingsLayout tabs={navItems2}>
+        <SettingsClient user={user} />
+      </SettingsLayout>
+      ;
     </>
   );
 }
