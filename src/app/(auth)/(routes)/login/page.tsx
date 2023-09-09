@@ -9,7 +9,7 @@ export default function LoginPage() {
   return (
     <div className="relative z-10 my-auto h-fit w-full max-w-sm overflow-hidden">
       <div className="flex flex-col items-center justify-center space-y-3 px-4 py-6 pt-8 text-center sm:px-16">
-        <Icons.logo className="h-12 w-12 bg-white rounnde-xl" />
+        <Icons.logo className="h-12 w-12 rounnde-xl" />
         <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50">
           Sign in to BioBeacon
         </h3>

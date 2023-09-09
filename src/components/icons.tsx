@@ -36,7 +36,7 @@ export const Icons = {
       fill="none"
       preserveAspectRatio="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn("transition h-12 w-12 rotate-[107deg]", props.className)}
+      className={cn("transition h-12 w-12", props.className)}
     >
       <defs>
         <mask id="globeOuterOnly">

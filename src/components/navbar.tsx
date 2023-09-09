@@ -14,7 +14,10 @@ export default async function Navbar() {
         <Link className="flex items-center text-md" href="/">
           <Icons.logo className="mr-2 h-5 w-5" /> BioBeacon
         </Link>
-        <div className="ml-auto flex h-full items-center">
+        <div className="ml-auto flex h-full items-center space-x-3">
+          <Link href="https://github.com/Devansh-365/biobeacon" target="_blank">
+            <Icons.gitHub className="w-7 h-7 transition ease-in-out hover:scale-110" />
+          </Link>
           {!user ? (
             <React.Fragment>
               <Link
