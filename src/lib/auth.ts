@@ -2,6 +2,8 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import db from "@/lib/db";
+import { sendWelcomeEmail } from "./emails/send-welcome";
+import { CreateUserEmailProps } from "@/types";
 
 function getGoogleCredentials(): { clientId: string; clientSecret: string } {
   const clientId = process.env.GOOGLE_CLIENT_ID;
@@ -66,6 +68,17 @@ export const authOptions: NextAuthOptions = {
         email: dbUser.email,
         picture: dbUser.image,
       };
+    },
+  },
+  events: {
+    async createUser(message) {
+      const params = {
+        user: {
+          name: message.user.name,
+          email: message.user.email,
+        },
+      };
+      await sendWelcomeEmail(params);
     },
   },
 };
