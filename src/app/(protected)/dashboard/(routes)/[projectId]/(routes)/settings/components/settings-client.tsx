@@ -63,7 +63,11 @@ export const SettingsClient = ({ project }: { project: any }) => {
       const url = qs.stringifyUrl({
         url: `/api/projects/${params?.projectId}`,
       });
-      await axios.patch(url, values);
+      await axios.patch(url, {
+        name: values.name.trim(),
+        bio: values.bio,
+        image: values.image,
+      });
 
       form.reset();
       toast.success("Link has been created!");

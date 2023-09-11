@@ -53,7 +53,9 @@ export const CreateProjectModal = () => {
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       console.log("MODAL: ", values);
-      await axios.post("/api/projects", values);
+      await axios.post("/api/projects", {
+        name: values.name.replace(/\s/g, "").trim(),
+      });
 
       form.reset();
       toast.success("Project has been created!");

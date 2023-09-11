@@ -61,7 +61,11 @@ export const SettingsClient = ({ user }: { user: any }) => {
       const url = qs.stringifyUrl({
         url: `/api/user`,
       });
-      await axios.patch(url, values);
+      await axios.patch(url, {
+        name: values.name.trim(),
+        email: values.email,
+        image: values.image,
+      });
 
       form.reset();
       toast.success("User details has been updated!");
