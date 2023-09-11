@@ -10,7 +10,7 @@ export default function CreateProjectButton() {
 
   return (
     <Button onClick={() => onOpen("createProject")}>
-      Create Projects <Icons.add className="w-4 h-4 ml-2" />
+      Create Project <Icons.add className="w-4 h-4 ml-2" />
     </Button>
   );
 }
