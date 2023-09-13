@@ -45,3 +45,29 @@ export async function PATCH(
     return new NextResponse("Internal error", { status: 500 });
   }
 }
+
+export async function DELETE(
+  req: Request,
+  { params }: { params: { projectId: string } }
+) {
+  try {
+    const session = await getServerSession(authOptions);
+
+    if (!session) {
+      return new Response("Unauthorized", { status: 403 });
+    }
+
+    const { user } = await session;
+
+    const project = await db.project.delete({
+      where: {
+        id: params.projectId,
+        userId: user.id,
+      },
+    });
+    return NextResponse.json(project);
+  } catch (error) {
+    console.log("[PROJECT_DELETE]", error);
+    return new NextResponse("Internal error", { status: 500 });
+  }
+}
